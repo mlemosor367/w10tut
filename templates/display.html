@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Display the weather data </title>
+	      <link rel="stylesheet" media="all" href="{{ url_for('static', filename='style1.css')}}">
+      </head>
+  <body>
+  <p><img scr="https://media.wired.co.uk/photos/606dba1c9a15f73a597a2aa1/master/w_1600,c_limit/weather.jpg">
+  </p>
+  <p><a href="{{ url_for('index') }}">back to home</a></p>
+    <h1>Data store in weather DB</h1>
+    <div >
+    <h1 >There are {{ count }} records  in Weather Database.</h1>
+
+        <table id="customers">
+            <tr>
+                <th>SensorID</th>
+                <th>Temperature</th>
+                <th>Humidity</th>
+                <th>Preassure</th>
+                <th>MessageTimeStamp</th>
+                <th>GatewayID</th>
+                <th>GatewayTimeStamp</th>
+
+            </tr>
+        {% for rc in rset %}
+
+            <tr>
+                <td>{{ rc.SensorID }}</td>
+                <td>{{ rc.Temperature }}</td>
+                <td>{{ rc.Humidity }}</td>
+                <td>{{ rc.Preassure }}</td>
+                <td>{{ rc.MessageTimeStamp }}</td>
+                <td>{{ rc.GatewayID }}</td>
+                <td>{{ rc.GatewayTimeStamp }}</td>
+
+            </tr>
+
+  {% endfor %}
+  </div>
+
+  <p>
+2021-CSE5IPR (BE-2) - IoT Technology and Applications</br>
+October 14 2021</br>
+Freddy Mauricio Lemos 20664067</br>
+20664067@students.latrobe.edu.au</br>
+</p>
+  </body>
+</html>
